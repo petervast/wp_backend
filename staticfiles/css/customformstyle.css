@@ -1,0 +1,41 @@
+#subheader span {
+	letter-spacing: 2px;
+	display: inline-block;
+	font-size: 15px;
+	margin-top: 20px;
+
+
+}
+
+.factsheet-label-header {
+	color: #fff;
+	background-color: #186875;
+}
+
+.form-control{
+	
+}
+
+.form_section_container {
+	border: black;
+	border-width: 2px;
+	border-style: solid;
+	margin-bottom: 1rem;
+}
+
+.form-title {
+	background-color: black;
+}
+
+
+.input-title
+{
+    background: black;
+    border: none;
+	color:white;
+	
+}
+
+.input-title{
+	font-size: 1.75rem;
+}

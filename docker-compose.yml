@@ -1,0 +1,33 @@
+# The docker-compose.yml file describes the services that make your app. In this example those services are a web server and database.
+
+version: "3.8"
+   
+services:
+    wesproject_db:
+      container_name: wesproject_db
+      image: postgres:14.5-alpine
+      volumes:
+        - wesproject_db:/var/lib/postgresql/data/
+      environment:
+        - POSTGRES_DB=postgres
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+    djangotagdata:
+        build: .
+        container_name: wesproject_API
+        command: python manage.py runserver 0.0.0.0:8070
+        volumes:
+            - .:/usr/src/app
+        ports:
+            - "8070:8070"
+        environment:
+            - POSTGRES_NAME=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+        depends_on:
+            - wesproject_db
+        restart: always
+
+
+volumes:
+  wesproject_db:
